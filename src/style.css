@@ -1,13 +1,17 @@
 body {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 header {
     display: flex;
+    justify-content: space-evenly;
     align-items: flex-end;
-    gap: 20px;
 }
 
 .logo {
@@ -22,22 +26,27 @@ header {
 }
 
 .upperline {
-    width: 80%;
+    width: 45%;
     border: 1px solid #000;
-    position: absolute;
+    position: fixed;
     top: 92px;
-    right: 18px;
+    left: 55%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
 }
 
 .underline {
-    width: 100%;
+    width: 55%;
     border: 1px solid #000;
-    margin-top: -25px;
+    position: fixed;
+    top: 142px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
 }
 
 nav {
-    display: flex;
-    margin-left: auto;
+    display: inline-flex;
     gap: 40px;
 }
 
@@ -46,6 +55,7 @@ button {
     font-size: 1em;
     font-weight: bold;
     border: 2px solid #000;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
     background-color: transparent;
     padding: 7px 20px;
     cursor: pointer;
@@ -53,6 +63,7 @@ button {
 }
 
 button:hover {
+    border-color: #fff;
     background-color: #000;
     color: #fff;
     transform: scale(1.1);
@@ -64,6 +75,36 @@ button:active {
     transform: scale(0.95);
 }
 
-#content {
-    margin-top: 30px;
+.fieldset {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 56%;
+    height: auto;
+    border: 4px double #000;
+    box-sizing: border-box;
+}
+
+.content-header {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Brush Script MT, cursive;
+}
+
+.content-header2 {
+    text-align: center;
+    margin-top: -10px;
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Brush Script MT, cursive;
+}
+
+.content-header3 {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Brush Script MT, cursive;
 }
