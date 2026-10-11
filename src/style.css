@@ -4,14 +4,64 @@ body {
     padding: 20px;
 }
 
+header {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.logo:active {
+    transform: scale(0.95);
+}
+
+.upperline {
+    width: 80%;
+    border: 1px solid #000;
+    position: absolute;
+    top: 92px;
+    right: 18px;
+}
+
+.underline {
+    width: 100%;
+    border: 1px solid #000;
+    margin-top: -25px;
+}
+
 nav {
     display: flex;
-    gap: 10px;
+    margin-left: auto;
+    gap: 40px;
 }
 
 button {
-    padding: 10px 20px;
+    letter-spacing: 1px;
+    font-size: 1em;
+    font-weight: bold;
+    border: 2px solid #000;
+    background-color: transparent;
+    padding: 7px 20px;
     cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+    background-color: #000;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+button:active {
+    background-color: #000;
+    color: #fff;
+    transform: scale(0.95);
 }
 
 #content {
