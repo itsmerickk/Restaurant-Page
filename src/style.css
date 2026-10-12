@@ -60,19 +60,20 @@ button {
     padding: 7px 20px;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
+    font-family: Brush Script MT, cursive;
 }
 
 button:hover {
     border-color: #fff;
     background-color: #000;
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 button:active {
     background-color: #000;
     color: #fff;
-    transform: scale(0.95);
+    transform: scale(0.98);
 }
 
 .fieldset {
@@ -81,7 +82,7 @@ button:active {
     align-self: center;
     width: 56%;
     height: auto;
-    border: 4px double #000;
+    border: 6px double #000;
     box-sizing: border-box;
 }
 
@@ -106,5 +107,59 @@ button:active {
     font-size: 1.4em;
     font-weight: bold;
     font-style: italic;
+    font-family: Brush Script MT, cursive;
+}
+
+.content-text {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: Brush Script MT, cursive;
+}
+
+.to-menu-button {
+    align-self: center;
+}
+
+.page-separator {
+    text-align: center;
+    margin-bottom: -12px;
+}
+
+.favorites-header {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Brush Script MT, cursive;
+}
+
+.favorites-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.favorite {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border: 2px dashed #000;
+    box-sizing: border-box;
+}
+
+.favorite-visual {
+    font-size: 1.3em;
+    filter: grayscale(100%);
+    text-align: center;
+    font-weight: bold;
+    font-family: Brush Script MT, cursive;
+}
+
+.favorite-description {
+    text-align: center;
+    font-size: 1.1em;
     font-family: Brush Script MT, cursive;
 }
