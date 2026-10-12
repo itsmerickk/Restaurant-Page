@@ -56,6 +56,20 @@ favorite2Description.textContent = "A stack of fluffy, golden pancakes served wi
 const favorite3Description = document.createElement("p");
 favorite3Description.classList.add("favorite-description");
 favorite3Description.textContent = "Warm apple pie with a buttery, flaky crust, cinnamon-spiced apples, and a taste of nostalgia in every bite.";
+const pageSeparator2 = document.createElement("p");
+pageSeparator2.classList.add("page-separator2");
+pageSeparator2.textContent = "• ─────────────────────────────────────────────────── •";
+const aboutUsHeader = document.createElement("h2");
+aboutUsHeader.classList.add("about-us-header");
+aboutUsHeader.textContent = "A Little About Us";
+const aboutUsHeader2 = document.createElement("h3");
+aboutUsHeader2.classList.add("about-us-header2");
+aboutUsHeader2.textContent = "A Taste of the Good Old Days";
+const aboutUsText = document.createElement("p");
+aboutUsText.classList.add("about-us-text");
+aboutUsText.textContent = `At Old Timer's Diner, we believe the best memories are made around the table. 
+                           Inspired by the classic American diners of the 1950s, we're all about hearty meals, friendly faces, and the simple pleasure of good food. 
+                           Whether you're stopping by for a quick breakfast, enjoying lunch with friends, or satisfying a late-night craving, there's always a place for you here.`;
 
 const logo = new Image();
 logo.src = Logo;
@@ -84,3 +98,7 @@ favorite3.appendChild(favorite3Visual);
 favorite1.appendChild(favorite1Description);
 favorite2.appendChild(favorite2Description);
 favorite3.appendChild(favorite3Description);
+fieldset.appendChild(pageSeparator2);
+fieldset.appendChild(aboutUsHeader);
+fieldset.appendChild(aboutUsHeader2);
+fieldset.appendChild(aboutUsText);

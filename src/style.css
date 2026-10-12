@@ -2,9 +2,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    font-family: Arial, sans-serif;
+    font-family: Brush Script MT, cursive;
     margin: 0;
-    padding: 20px;
+    padding: 160px 20px 20px;
     box-sizing: border-box;
 }
 
@@ -12,6 +12,14 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0px 10px 0px;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 1000;
 }
 
 .logo {
@@ -33,6 +41,7 @@ header {
     left: 55%;
     transform: translateX(-50%);
     box-sizing: border-box;
+    z-index: 1000;
 }
 
 .underline {
@@ -43,6 +52,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     box-sizing: border-box;
+    z-index: 1000;
 }
 
 nav {
@@ -84,13 +94,13 @@ button:active {
     height: auto;
     border: 6px double #000;
     box-sizing: border-box;
+    padding: 20px;
 }
 
 .content-header {
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
-    font-family: Brush Script MT, cursive;
 }
 
 .content-header2 {
@@ -99,7 +109,6 @@ button:active {
     font-size: 2em;
     font-weight: bold;
     font-style: italic;
-    font-family: Brush Script MT, cursive;
 }
 
 .content-header3 {
@@ -107,14 +116,12 @@ button:active {
     font-size: 1.4em;
     font-weight: bold;
     font-style: italic;
-    font-family: Brush Script MT, cursive;
 }
 
 .content-text {
-    margin-top: 30px;
+    margin: 30px 0;
     text-align: center;
     font-size: 1.2em;
-    font-family: Brush Script MT, cursive;
 }
 
 .to-menu-button {
@@ -123,20 +130,26 @@ button:active {
 
 .page-separator {
     text-align: center;
-    margin-bottom: -12px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.page-separator2 {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 5px;
 }
 
 .favorites-header {
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
-    font-family: Brush Script MT, cursive;
 }
 
 .favorites-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1em;
 }
 
 .favorite {
@@ -146,8 +159,17 @@ button:active {
     align-items: center;
     width: fit-content;
     height: fit-content;
+    padding: 10px;
     border: 2px dashed #000;
     box-sizing: border-box;
+    transition: all 0.1s ease-in-out;
+}
+
+.favorite:hover {
+    transform: scale(1.03);
+    background-color: rgb(0, 0, 0, 0.75);
+    color: #fff;
+    border-color: #fff;
 }
 
 .favorite-visual {
@@ -155,11 +177,31 @@ button:active {
     filter: grayscale(100%);
     text-align: center;
     font-weight: bold;
-    font-family: Brush Script MT, cursive;
 }
 
 .favorite-description {
     text-align: center;
     font-size: 1.1em;
-    font-family: Brush Script MT, cursive;
 }
+
+.about-us-header {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.about-us-header2 {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-us-text {
+    text-align: center;
+    font-size: 1.2em;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
