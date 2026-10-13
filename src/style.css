@@ -1,3 +1,8 @@
+::selection {
+    background-color: #000;
+    color: #fff;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -29,8 +34,14 @@ header {
     cursor: pointer;
 }
 
+.logo:hover {
+    opacity: 0.85;
+}
+
 .logo:active {
     transform: scale(0.95);
+    opacity: 1;
+
 }
 
 .upperline {
@@ -75,21 +86,22 @@ button {
 
 button:hover {
     border-color: #fff;
-    background-color: #000;
+    background-color: rgb(0, 0, 0, 0.75);
     color: #fff;
     transform: scale(1.05);
 }
 
 button:active {
-    background-color: #000;
+    background-color: rgb(0, 0, 0, 0.80);
     color: #fff;
     transform: scale(0.98);
 }
 
-.fieldset {
+.mainSection {
     display: flex;
     flex-direction: column;
-    align-self: center;
+    justify-self: center;
+    margin-top: 2em;
     width: 56%;
     height: auto;
     border: 6px double #000;
@@ -98,6 +110,10 @@ button:active {
 }
 
 .content-header {
+    position: absolute;
+    top: 19.5%;
+    left: 46.5%;
+    background-color: #fff;
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
@@ -243,6 +259,20 @@ button:active {
 .footer {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-size: 12px;
+}
+
+.footer::before,
+.footer::after {
+    content: "────────";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 2px;
+    margin: auto;
 }
