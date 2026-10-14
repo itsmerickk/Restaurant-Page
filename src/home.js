@@ -2,12 +2,6 @@ export default function homePage() {
 const content = document.querySelector("#content");
 content.replaceChildren();
 
-const upperLine = document.createElement("hr");
-upperLine.classList.add("upperline");
-
-const underLine = document.createElement("hr");
-underLine.classList.add("underline");;
-
 const mainSection = document.createElement("div");
 mainSection.classList.add("mainSection");
 
@@ -155,9 +149,6 @@ const waitingItem4 = document.createElement("li");
 waitingItem4.textContent = "A warm, welcoming atmosphere";
 
 
-
-content.appendChild(upperLine);
-content.appendChild(underLine);
 content.appendChild(mainSection);
 mainSection.appendChild(contentHeader);
 mainSection.appendChild(contentHeader2);

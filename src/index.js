@@ -1,9 +1,19 @@
 import "./style.css";
 import Logo from "./images/Logo.svg";
 import homePage from "./home.js";
+import menu from "./menu.js";
 
 const header = document.querySelector("header");
 const footer = document.querySelector("#footer");
+
+const upperLine = document.createElement("hr");
+upperLine.classList.add("upperline");
+
+const underLine = document.createElement("hr");
+underLine.classList.add("underline");;
+
+document.body.appendChild(upperLine);
+document.body.appendChild(underLine);
 
 const logo = new Image();
 logo.src = Logo;
@@ -20,8 +30,11 @@ document.body.appendChild(footer);
 footer.appendChild(footerText);
 
 const homeButton = document.querySelector("#home-btn");
+const menuButton = document.querySelector("#menu-btn");
 
-homeButton.addEventListener("click", homePage);
 logo.addEventListener("click", homePage);
+homeButton.addEventListener("click", homePage);
+menuButton.addEventListener("click", menu);
 
 homePage();
+menu();
