@@ -1,3 +1,8 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
 ::selection {
     background-color: #000;
     color: #fff;
@@ -7,12 +12,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    font-family: Brush Script MT, cursive;
+    font-family: "Brush Script MT", cursive;
     margin: 0;
     padding: 160px 20px 20px;
-    box-sizing: border-box;
+    min-height: 100vh;
+    color: #000;
+    background-color: #fff;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-evenly;
@@ -21,16 +29,18 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 0px 10px 0px;
-    box-sizing: border-box;
-    background-color: white;
+    padding: 20px 20px 10px;
+    background-color: #fff;
     z-index: 1000;
 }
 
+/* Logo */
 .logo {
+    display: block;
     width: 200px;
+    max-width: 100%;
     height: auto;
-    transition: all 0.1s ease-in-out;
+    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
     cursor: pointer;
 }
 
@@ -41,255 +51,848 @@ header {
 .logo:active {
     transform: scale(0.95);
     opacity: 1;
+}
 
+/* Header Lines */
+.upperline,
+.underline {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 0;
+    border-top: 2px solid #000;
+    height: 0;
+    z-index: 1000;
 }
 
 .upperline {
     width: 45%;
-    border: 1px solid #000;
-    position: fixed;
     top: 92px;
     left: 55%;
-    transform: translateX(-50%);
-    box-sizing: border-box;
-    z-index: 1000;
 }
 
 .underline {
     width: 55%;
-    border: 1px solid #000;
-    position: fixed;
     top: 142px;
-    left: 50%;
-    transform: translateX(-50%);
-    box-sizing: border-box;
-    z-index: 1000;
 }
 
+/* Navigation */
 nav {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
     gap: 40px;
 }
 
+/* Buttons */
 button {
-    letter-spacing: 1px;
+    font-family: inherit;
     font-size: 1em;
     font-weight: bold;
+    letter-spacing: 1px;
+    color: #000;
     border: 2px solid #000;
-    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+    box-shadow: 2px 2px 0 #000;
     background-color: transparent;
     padding: 7px 20px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
-    font-family: Brush Script MT, cursive;
+    transition: transform 0.1s ease-in-out,
+                background-color 0.1s ease-in-out,
+                color 0.1s ease-in-out;
 }
 
 button:hover {
+    background-color: rgb(0 0 0 / 85%);
     border-color: #fff;
-    background-color: rgb(0, 0, 0, 0.75);
     color: #fff;
-    transform: scale(1.05);
+    transform: translate(-1px, -1px);
 }
 
 button:active {
-    background-color: rgb(0, 0, 0, 0.80);
+    border-color: #fff;
+    background-color: #000;
     color: #fff;
     transform: scale(0.98);
 }
 
+button:focus-visible,
+.logo:focus-visible {
+    outline: 3px dashed #000;
+    outline-offset: 4px;
+}
+
+/* Main Homepage Section */
 .mainSection {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-self: center;
-    margin-top: 2em;
-    width: 56%;
+    width: min(56%, 1000px);
     height: auto;
+    margin-top: 2em;
     border: 6px double #000;
-    box-sizing: border-box;
-    padding: 20px;
-    position: relative;
+    padding: 30px;
 }
 
+/* Main Section Heading */
 .content-header {
-    position: absolute;
-    top: -1.5%;
-    left: 43.5%;
-    background-color: #fff;
+    letter-spacing: 3px;
     text-align: center;
     font-size: 1.5em;
-    font-weight: bold;
+    margin-bottom: 5px;
 }
 
+/* Secondary Heading */
 .content-header2 {
     text-align: center;
-    margin-top: -10px;
+    margin: 0 0 15px;
     font-size: 2em;
     font-weight: bold;
     font-style: italic;
 }
 
+/* Third Heading */
 .content-header3 {
     text-align: center;
+    margin: 0 0 10px;
     font-size: 1.4em;
     font-weight: bold;
     font-style: italic;
 }
 
+/* Homepage Paragraph */
 .content-text {
-    margin: 30px;
-    text-align: justify;
+    margin: 15px 0;
+    text-align: center;
     font-size: 1.2em;
+    line-height: 1.6;
 }
 
+/* Menu Button */
 .to-menu-button {
     align-self: center;
+    margin-top: 20px;
+}
+
+/* Decorative Separators */
+.page-separator,
+.page-separator2,
+.page-separator3 {
+    text-align: center;
+    line-height: 1;
 }
 
 .page-separator {
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 0px;
+    margin: 15px 0 0;
 }
 
-.page-separator2 {
-    text-align: center;
-    margin-top: 25px;
-    margin-bottom: 5px;
+.page-separator2,
+.page-separator3 {
+    margin: 25px 0 5px;
 }
 
+/* Favorites Section */
 .favorites-header {
+    letter-spacing: 3px;
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .favorites-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1em;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
 }
 
+/* Individual Favorite Card */
 .favorite {
     display: flex;
+    flex: 1 1 200px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    width: fit-content;
-    height: fit-content;
+    max-width: 300px;
     padding: 10px;
     border: 2px dashed #000;
-    box-sizing: border-box;
-    transition: all 0.1s ease-in-out;
+    transition: transform 0.15s ease-in-out,
+                background-color 0.15s ease-in-out,
+                color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out;
 }
 
 .favorite:hover {
-    transform: scale(1.03);
-    background-color: rgb(0, 0, 0, 0.75);
+    transform: translateY(-3px);
+    background-color: rgb(0 0 0 / 85%);
     color: #fff;
     border-color: #fff;
 }
 
 .favorite-visual {
     font-size: 1.3em;
-    filter: grayscale(100%);
-    text-align: center;
     font-weight: bold;
-}
-
-.favorite-description {
     text-align: center;
-    font-size: 1.1em;
-}
-
-.about-us-header {
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 0px;
-}
-
-.about-us-header2 {
-    text-align: center;
-    font-size: 1.3em;
-    font-weight: bold;
-    margin-bottom: 0px;
-}
-
-.about-us-text {
-    text-align: justify;
-    font-size: 1.2em;
-    margin: 30px;
-}
-
-.page-separator3 {
-    text-align: center;
-    margin-top: 25px;
     margin-bottom: 5px;
 }
 
+.favorite-description {
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* About Us */
+.about-us-header {
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 15px;
+}
+
+.about-us-header2 {
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px;
+}
+
+.about-us-text {
+    font-size: 1.2em;
+    line-height: 1.7;
+    text-align: center;
+    margin: 15px 0;
+}
+
+/* Location Heading */
 .ourLocation {
+    letter-spacing: 3px;
     text-align: center;
     font-size: 1.6em;
+    margin-bottom: 20px;
 }
 
-.location {
-    font-style: italic;
-}
-
+/* Location Container */
 .locationContainer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1em;
-    padding: 0 30px;
+    align-items: stretch;
+    gap: 30px;
+    padding: 0 20px;
 }
 
+/* Individual Location Box */
 .locationBox {
     display: flex;
+    flex: 1 1 220px;
     flex-direction: column;
-    width: fit-content;
-    height: auto;
-    padding: 10px;
-    filter: grayscale(100%);
+    max-width: 350px;
     font-size: 1.2em;
+    line-height: 1.5;
 }
 
 .locationBox > h3 {
     font-size: 1.1em;
+    margin: 0 0 10px;
 }
 
+.locationBox p {
+    margin: 5px 0;
+}
+
+/* Footer */
 .footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    gap: 8px;
+    width: 100%;
     margin-top: auto;
+    font-size: 12px;
+    text-align: center;
 }
 
 .footer::before,
 .footer::after {
     content: "────────";
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 2px;
-    margin: auto;
+    display: block;
+    text-align: center;
+    line-height: 1;
 }
 
+/* Main Menu */
+.menuSection {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: min(56%, 1000px);
+    height: auto;
+    margin-top: 2em;
+    padding: 30px 40px;
+    border: 6px double #000;
+}
+
+/* Menu Heading */
 .mainSecHeader {
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+/* Menu Item Names */
+.menuSection h4 {
+    letter-spacing: 3px;
+    font-size: 20px;
+    margin: 0 0 3px;
+}
+
+/* Menu Descriptions and Prices */
+.menuSection p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 3px 0;
+}
+
+/* All Menu Prices */
+p[class$="Price"] {
+    align-self: center;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Menu Section Grids */
+.breakfastGroup,
+.burgersGroup,
+.dinerClassicsGroup,
+.saladsGroup,
+.dessertsGroup,
+.drinksGroup {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 20px;
+    row-gap: 5px;
+}
+
+/* Section Headings */
+.breakfast,
+.burgers,
+.dinerClassics,
+.salads,
+.desserts,
+.drinks {
+    letter-spacing: 3px;
+    grid-column: 1 / -1;
+    font-size: 1.7em;
     text-align: center;
 }
 
-.mainSecHeader::before,
-.mainSecHeader::after {
-    content: "──────";
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 190px;
-    height: 2px;
-    margin: auto;
+/* Spacing Between Sections */
+.burgers,
+.dinerClassics,
+.salads,
+.desserts,
+.drinks {
+    margin-top: 1.5em;
 }
 
+/* Menu Item Groups */
+.pancakesGroup,
+.classicCheeseburgerGroup,
+.doubleTroubleBurgerGroup,
+.oldTimersBurgerGroup,
+.crispyChickenSandwichGroup,
+.classicBLTGroup,
+.phillyCheesesteakGroup,
+.fishAndChipsGroup,
+.chickenFriedSteakGroup,
+.meatloafDinnerGroup,
+.macAndCheeseGroup,
+.bbqPorkRibsGroup,
+.grilledCheeseSoupGroup,
+.caesarSaladGroup,
+.grilledChickenSaladGroup,
+.gardenSaladGroup,
+.chickenTendersGroup,
+.applePieGroup,
+.cheesecakeGroup,
+.brownieSundaeGroup,
+.bananaSplitGroup,
+.milkshakeGroup,
+.peachCobblerGroup,
+.coffeeGroup,
+.icedCoffeeGroup,
+.hotChocolateGroup,
+.lemonadeGroup,
+.cocaColaGroup,
+.rootBeerFloatGroup,
+.orangeJuiceGroup,
+.chocolateMilkGroup {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .mainSection,
+    .menuSection {
+        width: 80%;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    button {
+        padding: 7px 14px;
+    }
+
+    .logo {
+        width: 160px;
+    }
+
+    .favorites-container,
+    .locationContainer {
+        gap: 15px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 650px) {
+    body {
+        gap: 35px;
+        padding: 150px 12px 20px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 130px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .upperline {
+        width: 45%;
+        top: 95px;
+    }
+
+    .underline {
+        width: 55%;
+        top: 140px;
+    }
+
+    .mainSection,
+    .menuSection {
+        width: 100%;
+        padding: 20px;
+        margin-top: 1em;
+    }
+
+    .page-separator,
+    .page-separator2,
+    .page-separator3,
+    .page-separator4,
+    .page-separator5 {
+        flex: 1 1 50%;
+    }
+
+    .content-header,
+    .mainSecHeader {
+        max-width: 100%;
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .content-header2 {
+        font-size: 1.6em;
+    }
+
+    .content-header3 {
+        font-size: 1.2em;
+    }
+
+    .content-text,
+    .about-us-text {
+        font-size: 1.05em;
+        line-height: 1.6;
+        margin: 10px 0;
+    }
+
+    .favorites-container,
+    .locationContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .favorite,
+    .locationBox {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .menuSection h4 {
+        font-size: 18px;
+    }
+
+    .menuSection p {
+        font-size: 16px;
+    }
+
+    .breakfastGroup,
+    .burgersGroup,
+    .dinerClassicsGroup,
+    .saladsGroup,
+    .dessertsGroup,
+    .drinksGroup {
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 12px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 380px) {
+    body {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 5px 8px;
+    }
+
+    .menuSection {
+        padding: 15px;
+    }
+
+    .mainSecHeader {
+        font-size: 1.5em;
+    }
+}
+
+/* Main Contact Section */
+.contactSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 56%;
+    height: auto;
+    border: 6px double #000;
+    box-sizing: border-box;
+    padding: 20px 40px;
+    color: #000;
+    background-color: #fff;
+}
+
+/* Main Heading */
+.contactHeader {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Main Subtitle */
+.contactSubtitle {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+
+/* Visit Us */
+.visitUsGroup {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-right: 1px solid #000;
+}
+
+.visitUsHeader {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.dinerNameGroup {
+    margin-bottom: 10px;
+}
+
+.dinerName {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.addressGroup {
+    margin-bottom: 15px;
+}
+
+.addressGroup p {
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.contactPhoneGroup,
+.contactEmailGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: baseline;
+}
+
+.contactPhoneLabel,
+.contactEmailLabel {
+    font-weight: bold;
+}
+
+.contactPhone,
+.contactEmail {
+    overflow-wrap: anywhere;
+}
+
+/* Opening Hours */
+.openingHoursGroup {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.openingHoursHeader {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.mondayHoursGroup,
+.tuesdayHoursGroup,
+.wednesdayHoursGroup,
+.thursdayHoursGroup,
+.fridayHoursGroup,
+.saturdayHoursGroup,
+.sundayHoursGroup {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: baseline;
+    border-bottom: 1px dotted #777;
+}
+
+.monday,
+.tuesday,
+.wednesday,
+.thursday,
+.friday,
+.saturday,
+.sunday {
+    font-weight: bold;
+}
+
+.mondayHours,
+.tuesdayHours,
+.wednesdayHours,
+.thursdayHours,
+.fridayHours,
+.saturdayHours,
+.sundayHours {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Get in Touch */
+.getInTouchGroup {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 20px;
+    border-top: 2px solid #000;
+}
+
+.getInTouchHeader {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.getInTouchDescr {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.getInTouchPhoneGroup,
+.getInTouchEmailGroup {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.getInTouchPhoneLabel,
+.getInTouchEmailLabel {
+    font-weight: bold;
+}
+
+.getInTouchPhone,
+.getInTouchEmail {
+    overflow-wrap: anywhere;
+}
+
+/* Private Events & Group Reservations */
+.privateEventsGroup {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 1px solid #000;
+}
+
+.privateEventsHeader {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.4;
+}
+
+.privateEventsDescr {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.privateEventsDetails {
+    line-height: 1.7;
+    max-width: 550px;
+    margin: 15px auto;
+}
+
+.privateEventsPhoneGroup {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.privateEventsPhoneLabel {
+    font-weight: bold;
+}
+
+/* A Little Note from Us */
+.dinerNoteGroup {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 25px 15px 10px;
+    border-top: 2px solid #000;
+}
+
+.dinerNoteHeader {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.dinerNoteFirst {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.dinerNoteSecond {
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+.dinerNoteFooter {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dotted #000;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Paragraph Spacing */
+.contactSection p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Responsive Layout */
+@media (max-width: 1000px) {
+    .contactSection {
+        width: 80%;
+        padding: 20px 25px;
+    }
+}
+
+@media (max-width: 650px) {
+    .contactSection {
+        grid-template-columns: 1fr;
+        width: 95%;
+        padding: 20px;
+    }
+
+    .contactHeader {
+        font-size: 1.8rem;
+    }
+
+    .visitUsGroup {
+        grid-column: 1;
+        border-right: none;
+        border-bottom: 1px solid #000;
+        padding-bottom: 25px;
+    }
+
+    .openingHoursGroup {
+        grid-column: 1;
+        padding-top: 25px;
+    }
+
+    .getInTouchGroup,
+    .privateEventsGroup,
+    .dinerNoteGroup {
+        grid-column: 1;
+    }
+
+    .mondayHoursGroup,
+    .tuesdayHoursGroup,
+    .wednesdayHoursGroup,
+    .thursdayHoursGroup,
+    .fridayHoursGroup,
+    .saturdayHoursGroup,
+    .sundayHoursGroup {
+        font-size: 0.9rem;
+    }
+}

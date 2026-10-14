@@ -5,15 +5,15 @@ content.replaceChildren();
 const mainSection = document.createElement("div");
 mainSection.classList.add("mainSection");
 
-const contentHeader = document.createElement("legend");
+const contentHeader = document.createElement("h3");
 contentHeader.classList.add("content-header");
 contentHeader.textContent = "Welcome to";
 
-const contentHeader2 = document.createElement("legend");
+const contentHeader2 = document.createElement("h2");
 contentHeader2.classList.add("content-header2");
 contentHeader2.textContent = "⎯ Old Timer's Diner ⎯";
 
-const contentHeader3 = document.createElement("legend");
+const contentHeader3 = document.createElement("h3");
 contentHeader3.classList.add("content-header3");
 contentHeader3.textContent = "Good food. Good company. Good old times.";
 
@@ -22,9 +22,6 @@ contentText.classList.add("content-text");
 contentText.textContent = `Step back in time and enjoy the comfort of classic American diner food. 
                            From fluffy pancakes and sizzling burgers to homemade pies and freshly brewed coffee, we've got a seat waiting just for you.`;
 
-const toMenuButton = document.createElement("button");
-toMenuButton.classList.add("to-menu-button");
-toMenuButton.textContent = "Explore Our Menu";
 
 const pageSeparator = document.createElement("p");
 pageSeparator.classList.add("page-separator");
@@ -110,7 +107,7 @@ locationBox3.classList.add("locationBox");
 
 const ourLocationHeader2 = document.createElement("h3");
 ourLocationHeader2.classList.add("ourLocationHeader");
-ourLocationHeader2.textContent = ` Pull Up a Chair!`;
+ourLocationHeader2.textContent = `🗺️ Pull Up a Chair!`;
 
 const location = document.createElement("p");
 location.classList.add("location");
@@ -154,7 +151,6 @@ mainSection.appendChild(contentHeader);
 mainSection.appendChild(contentHeader2);
 mainSection.appendChild(contentHeader3);
 mainSection.appendChild(contentText);
-mainSection.appendChild(toMenuButton);
 mainSection.appendChild(pageSeparator);
 mainSection.appendChild(favoritesHeader);
 mainSection.appendChild(favoritesContainer);
